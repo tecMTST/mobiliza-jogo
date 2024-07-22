@@ -39,6 +39,7 @@ func _on_ControleDeToque_toque_desfeito(historico):
 
 func _on_ControleDeToque_toque_realizado(historico):
 	var posicao = get_local_mouse_position()
+	$Base/Animador.play("anuncio")
 	_sprite_topo.position = posicao
 	_sprite_base.position = posicao
 	_movendo = true
