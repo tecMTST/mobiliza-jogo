@@ -2,6 +2,7 @@ extends Node2D
 
 
 export var numero_de_pessoas = 15
+export var textura: Texture
 
 
 var aleatorio = RandomNumberGenerator.new()
@@ -15,6 +16,8 @@ onready var barra_de_progresso = $BarraDeProgresso as ProgressBar
 func _ready():
 	aleatorio.randomize()
 	barra_de_progresso.max_value = numero_de_pessoas
+	if textura:
+		$Sprite.texture = textura
 
 
 func _process(delta):
