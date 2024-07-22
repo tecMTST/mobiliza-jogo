@@ -44,9 +44,6 @@ func _on_ControleDeToque_toque_realizado(historico):
 	_movendo = true
 	_sprite_topo.visible = true
 	_sprite_base.visible = true
-	#if posicao.length() < raio_tolerancia:
-	#	_movendo = true
-	#	_sprite_topo.visible = true
 	_mover_alavanca(posicao)
 
 
