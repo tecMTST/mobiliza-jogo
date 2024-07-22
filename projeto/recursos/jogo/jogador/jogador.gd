@@ -5,9 +5,9 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export (int) var multiplicador_velocidade = 300
-export (int) var maximo_seguidores = 5
-export (int) var tempo_segundos = 180
+export (int) var multiplicador_velocidade := 300
+export (int) var maximo_seguidores := 5
+export (int) var tempo_segundos := 180
 export var loc_temporizador: NodePath
 export var pontos_de_habilidade := 0
 
@@ -37,6 +37,7 @@ func _ready():
 	barra_tempo.value = temporizador.wait_time
 
 func retirar_seguidor():
+	$Animador.play("squish")
 	return _seguidores.pop_back()
 
 func adicionar_seguidor(seguidor):
@@ -56,20 +57,19 @@ func get_input():
 	if Input.is_action_pressed("right"):
 		sprite.scale.x = 1
 		velocidade.x += 1
-		_movendo = true
 	if Input.is_action_pressed("left"):
 		sprite.scale.x = -1
 		velocidade.x -= 1
-		_movendo = true
 	if Input.is_action_pressed("down"):
 		velocidade.y += 1
-		_movendo = true
 	if Input.is_action_pressed("up"):
 		velocidade.y -= 1
-		_movendo = true
 	velocidade = velocidade.normalized() * multiplicador_velocidade
 
 func _process(delta):
+	if velocidade.length_squared() >= multiplicador_velocidade:
+		_movendo = true
+		
 	if velocidade.x<0:
 		sprite.scale.x=-abs(sprite.scale.x)
 		poeira.scale.x=abs(poeira.scale.x)
@@ -93,7 +93,6 @@ func _physics_process(delta):
 
 func _on_alavanca_de_toque_alavanca_movida(posicao: Vector2):
 	velocidade = posicao.normalized() * multiplicador_velocidade
-	_movendo = true
 
 func _on_alavanca_de_toque_alavanca_solta():
 	velocidade = Vector2.ZERO
