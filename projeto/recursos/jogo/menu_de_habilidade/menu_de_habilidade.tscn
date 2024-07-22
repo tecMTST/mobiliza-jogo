@@ -21,6 +21,8 @@ radius = 100.0
 radius = 400.0
 
 [node name="menu_de_habilidade" type="Node2D"]
+z_index = 100
+z_as_relative = false
 script = ExtResource( 6 )
 
 [node name="Mostrar" type="TouchScreenButton" parent="."]
