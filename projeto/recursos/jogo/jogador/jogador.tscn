@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://recursos/jogo/jogador/jogador.gd" type="Script" id=1]
 [ext_resource path="res://elementos/imagem/pessoas/branco.png" type="Texture" id=2]
 [ext_resource path="res://recursos/jogo/menu_de_habilidade/menu_de_habilidade.tscn" type="PackedScene" id=3]
 [ext_resource path="res://elementos/fontes/roboto.tres" type="DynamicFont" id=4]
 [ext_resource path="res://recursos/jogo/jogador/alavanca_de_toque/alavanca_de_toque.tscn" type="PackedScene" id=5]
-[ext_resource path="res://elementos/audio/bob_andando.mp3" type="AudioStream" id=6]
 [ext_resource path="res://recursos/jogo/texto_contador/texto_contador.tscn" type="PackedScene" id=7]
 [ext_resource path="res://recursos/jogo/jogador/ContadorFPS.gd" type="Script" id=8]
 
@@ -97,9 +96,6 @@ position = Vector2( 0, 342 )
 scale = Vector2( 0.2, 0.2 )
 z_index = 100
 z_as_relative = false
-
-[node name="BobAndando" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 6 )
 
 [node name="SpritesJogador" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -48 )

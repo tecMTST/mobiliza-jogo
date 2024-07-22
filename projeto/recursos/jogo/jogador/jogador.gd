@@ -84,13 +84,10 @@ func _physics_process(delta):
 	velocidade = move_and_slide(velocidade)
 
 func _on_alavanca_de_toque_alavanca_movida(posicao: Vector2):
-	if not $BobAndando.playing:
-		$BobAndando.play()
 	velocidade = posicao.normalized() * multiplicador_velocidade
 	_movendo = true
 
 func _on_alavanca_de_toque_alavanca_solta():
-	$BobAndando.stop()
 	velocidade = Vector2.ZERO
 	_movendo = false
 
