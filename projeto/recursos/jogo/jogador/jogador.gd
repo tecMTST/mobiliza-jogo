@@ -15,6 +15,7 @@ onready var sprite = $SpritesJogador as AnimatedSprite
 onready var texto_seguidores = $texto_contador
 onready var barra_tempo = $TempoRestante as ProgressBar
 onready var temporizador = get_node(loc_temporizador) as Timer
+onready var poeira = $Poeira as AnimatedSprite
 
 var aleatorio = RandomNumberGenerator.new()
 var _seguidores = []
@@ -71,12 +72,19 @@ func get_input():
 func _process(delta):
 	if velocidade.x<0:
 		sprite.scale.x=-abs(sprite.scale.x)
+		poeira.scale.x=abs(poeira.scale.x)
+		poeira.position.x = 35
 	elif velocidade.x>0:
 		sprite.scale.x=abs(sprite.scale.x)
+		poeira.scale.x=-abs(poeira.scale.x)
+		poeira.position.x = -35
+
 	if _movendo:
 		sprite.play("andar")
+		poeira.play("poeira")
 	else:
 		sprite.play("parar")
+		poeira.play("nada")
 	texto_seguidores.alterar_valor(_seguidores.size())
 	barra_tempo.value = temporizador.time_left
 
@@ -97,7 +105,6 @@ func aumentar_maximo_seguidores(valor: int) -> bool:
 	pontos_de_habilidade -= 1
 	maximo_seguidores += valor
 	texto_seguidores.alterar_maximo(maximo_seguidores)
-	print(texto_seguidores.maximo)
 	return true
 
 func aumentar_area(valor: int) -> bool:
