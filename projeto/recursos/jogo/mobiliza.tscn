@@ -67,7 +67,7 @@ position = Vector2( 293, 1235 )
 position = Vector2( 820, 93 )
 
 [node name="jogador" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 185, 674 )
+position = Vector2( 173, 747 )
 loc_temporizador = NodePath("../../Temporizador")
 
 [node name="predio" parent="YSort" instance=ExtResource( 2 )]
@@ -259,7 +259,7 @@ position = Vector2( -427, 693 )
 position = Vector2( -584, 942 )
 
 [node name="pessoa62" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -64, 575 )
+position = Vector2( -178, 657 )
 
 [node name="ponto_de_entrega" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 3, -298 )
