@@ -9,6 +9,7 @@
 [ext_resource path="res://recursos/jogo/ponto_de_entrega/ponto_de_entrega.tscn" type="PackedScene" id=7]
 
 [node name="mobiliza" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 5 )
 
 [node name="mapa" parent="." instance=ExtResource( 6 )]
