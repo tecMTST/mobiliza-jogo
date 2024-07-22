@@ -34,7 +34,7 @@ func definir_alvo(alvo):
 	distancia_maxima = aleatorio.randi_range(variedade_distancia_maxima.x,variedade_distancia_maxima.y)	
 	vetor_diferente = gerar_vetor_aleatorio()
 	_alvo = alvo
-	cor='branca'
+	cor='verde'
 
 
 func mobilizar(ponto):
